@@ -1,0 +1,27 @@
+╔═══════════════════════════════════════════════════════════╗
+║     数字遗产管家 — 性能测试报告                           ║
+║     Digital Legacy Guardian — Performance Test Suite    ║
+╚═══════════════════════════════════════════════════════════╝
+测试时间: 2026-06-17
+测试环境: localhost (无网络延迟干扰)
+
+======================================================================
+1. API 端点性能测试 (50次/端点)
+======================================================================
+
+GET  /api/health:             avg=0.38ms  min=0ms  max=1ms  success=50/50
+GET  /api/plans:              avg=0.40ms  min=0ms  max=1ms  success=50/50
+GET  /api/plans/:id:          avg=0.42ms  min=0ms  max=1ms  success=50/50
+GET  /api/plans?userId=xxx:   avg=0.40ms  min=0ms  max=1ms  success=50/50
+GET  /api/inheritance/:planId:avg=0.44ms  min=0ms  max=1ms  success=50/50
+GET  /api/users/search:       avg=0.32ms  min=0ms  max=1ms  success=50/50
+GET  /api/ai/llm/status:      avg=0.30ms  min=0ms  max=1ms  success=50/50
+
+======================================================================
+2. 邮件模板生成性能测试 (10000次)
+======================================================================
+
+HTML 邮件模板生成:            avg=0.0007ms  min=0ms  max=1ms
+
+注：邮件模板生成完全在内存中进行（字符串拼接），耗时可忽略不计。
+    实际邮件发送时间取决于 SMTP 服务器响应，不在本地测试范围内。

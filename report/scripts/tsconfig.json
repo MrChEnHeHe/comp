@@ -1,0 +1,10 @@
+{
+  "extends": "../../backend/tsconfig.json",
+  "include": ["./**/*.ts", "../../backend/src/**/*.ts"],
+  "compilerOptions": {
+    "outDir": "../results/compiled"
+  },
+  "ts-node": {
+    "transpileOnly": true
+  }
+}

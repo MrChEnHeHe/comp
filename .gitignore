@@ -20,6 +20,8 @@ contracts/build/
 contracts/cache/
 contracts/artifacts/
 ./docs/Problems.md
+**/node_modules/
+**/package-lock.json
 
 # Report build artifacts
 report/*.pdf
@@ -32,5 +34,11 @@ report/*.blg
 report/*.fls
 report/*.fdb_latexmk
 report/*.synctex.gz
+report/*.tmp.*
 report/figures_tikz/
-report/*.js
+
+# Keep these in report:
+#   report.tex - main LaTeX source
+#   figures/*.png - diagrams and screenshots
+#   results/*.txt - test output data
+#   scripts/*.ts - test scripts
